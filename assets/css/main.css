@@ -1,11 +1,13 @@
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600|Raleway:500,700,800");
 
-/*
-	Slate by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600|Raleway:500,700,800");
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 100,
+  'GRAD' 100,
+  'opsz' 24;
+font-size: 24px;
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -117,7 +119,7 @@ input, select, textarea {
 
 	body {
 		background-color: #fff;
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	body, input, select, textarea {
@@ -2284,104 +2286,99 @@ input, select, textarea {
 
 /* Icon */
 
-	.icon {
-		text-decoration: none;
-		border-bottom: none;
-		position: relative;
-	}
+/* --- Custom Icon Styling --- */
 
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
-		}
+/* This is the new, correct code for the wrapper */
+.icon-wrapper {
+  /* This is the most important rule. It sets up the container for layering. */
+  position: relative; 
 
-		.icon > .label {
-			display: none;
-		}
+  /* Set a specific size for your icon. 80px is a good start. */
+  width: 80px;
+  height: 80px;
 
-		.icon.solid:before {
-			font-weight: 900;
-		}
+  /* This centers the icon block and adds some space below it. */
+  margin: 0 relative 1.5em; 
+}
 
-		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
-		}
 
-		.icon:before {
-			cursor: inherit;
-		}
+/* 2. Basic positioning for BOTH SVGs */
+.icon-wrapper .petal-background,
+.icon-wrapper .icon-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-	.icon-wrapper {
-		width: 4em;
-		height: 2em;
-		line-height: 2em;
-		display: inline-block;
-		text-align: center;
-		position: relative;
-		margin: 1.235em 0;
-	}
+/* 3. Make the foreground icon smaller and centered */
+.icon-wrapper .icon-foreground {
+  width: 52%;
+  height: 52%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-		.icon-wrapper:before, .icon-wrapper:after {
-			content: '';
-			width: 0;
-			height: 0;
-			border-left: solid 2em transparent;
-			border-right: solid 2em transparent;
-			position: absolute;
-			left: 0;
-		}
+/* 4. DEFAULT STATE STYLING (The magic of inline SVG!) */
+.petal-background path, 
+.petal-background circle { /* Target paths and circles inside the SVG */
+  stroke: #FF6f00; /* Your brand orange */
+  stroke-width: 6px; /* Petal stroke width */
+  fill: none; /* IMPORTANT: No fill by default */
+  transition: fill 0.3s ease-in-out; /* Smooth transition for hover */
+}
 
-		.icon-wrapper:before {
-			border-bottom: solid 1.235em;
-			top: -1.235em;
-		}
+.icon-foreground path,
+.icon-foreground circle {
+  stroke: #2e2e2e; /* Black for the icon */
+  stroke-width: 6px; /* Icon stroke width */
+  fill: none;
+}
 
-		.icon-wrapper:after {
-			border-top: solid 1.235em;
-			bottom: -1.235em;
-		}
+/* 5. HOVER STATE STYLING */
+.feature-item:hover .petal-background path,
+.feature-item:hover .petal-background circle {
+  fill: #FFa968; /* Your light orange/peach fill color */
+  stroke: #2e2e2e;
+}
 
-		.icon-wrapper .icon {
-			cursor: default;
-		}
+/* 5. HOVER STATE STYLING */
+.feature-item:hover .icon-foreground path,
+.feature-item:hover .icon-foreground circle {
+  stroke: #2e2e2e;
+}
 
-			.icon-wrapper .icon:before {
-				font-size: 1.5rem;
-			}
 
-		.icon-wrapper.major {
-			display: block;
-			margin: 1.235em 0 3.235em 0;
-		}
 
-		.icon-wrapper.small {
-			font-size: 0.75em;
-		}
+/* =================================================================== */
+/* Font Awesome Icon Styles (THIS IS THE PART TO ADD/EDIT)             */
+/* This is where you style the icon itself                             */
+/* =================================================================== */
+.icon-wrapper i {
+    font-size: 2rem;      /* <-- CHANGE THE ICON SIZE HERE */
+    color: #fff;       /* <-- CHANGE THE ICON COLOR HERE */
+}
 
-			.icon-wrapper.small .icon:before {
-				font-size: 1.25rem;
-			}
+/* --- Modifier Classes for the Wrapper --- */
+/* Makes the wrapper take up the full width with more margin */
+.icon-wrapper.major {
+    display: flex; /* Use flex instead of block for consistency */
+    margin: 1.235em 0 3.235em 0;
+}
 
-	.icon-wrapper {
-		background-color: #f6f6f6;
-		box-shadow: 0 -1px 0 0 #f6f6f6, 0 1px 0 0 #f6f6f6;
-	}
+/* Makes the wrapper and its contents smaller */
+.icon-wrapper.small {
+    font-size: 0.75em;
+}
 
-		.icon-wrapper:before {
-			border-bottom-color: #f6f6f6;
-		}
 
-		.icon-wrapper:after {
-			border-top-color: #f6f6f6;
-		}
+/* --- Styles the Material Symbol INSIDE the wrapper --- */
+.icon-wrapper .material-symbols-outlined {
+    font-size: 2rem;      /* Controls the size of the icon */
+    color: #fff;         /* Controls the color of the icon */
+}
 
 /* Image */
 
@@ -3123,7 +3120,7 @@ input, select, textarea {
 					}
 
 		.wrapper.style1 {
-			background-color: #444;
+			background-color: #2e2e2e;
 			color: #fff;
 			border-top: 0;
 		}
