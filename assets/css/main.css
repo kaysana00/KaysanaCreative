@@ -1,14 +1,3 @@
-
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600|Raleway:500,700,800");
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 100,
-  'GRAD' 100,
-  'opsz' 24;
-font-size: 24px;
-}
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -118,21 +107,21 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: #fff;
+		background-color: #ffffff;
 		color: #2e2e2e;
 	}
 
 	body, input, select, textarea {
 		font-family: "Lato", Helvetica, sans-serif;
-		font-size: 13pt;
-		font-weight: 400;
+		font-size: 14pt;
+		font-weight: 500;
 		line-height: 1.65em;
 	}
 
 		@media screen and (max-width: 1680px) {
 
 			body, input, select, textarea {
-				font-size: 11pt;
+				font-size: 13pt;
 			}
 
 		}
@@ -151,7 +140,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		font-weight: 600;
+		font-weight: 700;
 	}
 
 	em, i {
@@ -294,19 +283,19 @@ input, select, textarea {
 	}
 
 	input, select, textarea {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	a {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	strong, b {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	blockquote {
@@ -1902,8 +1891,8 @@ input, select, textarea {
 	button,
 	.button {
 		background-color: transparent;
-		color: #444 !important;
-		box-shadow: inset 0 0 0 1px #444;
+		color: #2e2e2e !important;
+		box-shadow: inset 0 0 0 1px #2e2e2e;
 	}
 
 		input[type="submit"]:hover,
@@ -1911,8 +1900,10 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #f6f6f6;
+			background-color: #ffa968 !important;
 		}
+
+		
 
 		input[type="submit"]:active,
 		input[type="reset"]:active,
@@ -1928,8 +1919,9 @@ input, select, textarea {
 		button.primary,
 		.button.primary {
 			box-shadow: none;
-			background-color: #444;
-			color: #fff !important;
+			background-color: #ff6f00;
+			color: #ffffff !important;
+			transition: color 0.2s ease-in-out;
 		}
 
 			input[type="submit"].primary:hover,
@@ -1937,7 +1929,8 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #515151;
+				background-color: #ffa968 !important;
+				color: #2e2e2e !important;	
 			}
 
 			input[type="submit"].primary:active,
@@ -1945,8 +1938,30 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #373737;
+				background-color: #2e2e2e;
 			}
+/*
+=================================================================
+    CUSTOM BANNER BUTTON OVERRIDE
+    - This code fixes the hover color issue for the banner button.
+=================================================================
+*/
+
+/* --- Base State for the BANNER button --- */
+#banner a.button.primary {
+  background-color: #ff6f00; /* Orange background */
+  color: #ffffff !important; /* Text is white (important to override the default gray) */
+  box-shadow: none; /* Ensures no default box-shadow is applied */
+  transition: all 0.3s ease; /* Animate ALL property changes smoothly */
+}
+
+
+/* --- Hover State for the BANNER button --- */
+#banner a.button.primary:hover {
+  background-color: #ffa968 ; /* Keeps the background orange */
+  color: #2e2e2e !important;  /* The FIX: Changes text to dark gray, using !important to win */
+  cursor: pointer;
+}
 
 /* Features */
 
@@ -2199,7 +2214,7 @@ input, select, textarea {
 	}
 
 	label {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	input[type="text"],
@@ -2225,7 +2240,7 @@ input, select, textarea {
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #444;
+			border-color: #2e2e2e;
 		}
 
 	select {
@@ -2233,13 +2248,13 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #444;
+			color: #2e2e2e;
 			background: #fff;
 		}
 
 	input[type="checkbox"] + label,
 	input[type="radio"] + label {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 		input[type="checkbox"] + label:before,
@@ -2254,14 +2269,14 @@ input, select, textarea {
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #444;
-		border-color: #444;
+		background-color: #2e2e2e;
+		border-color: #2e2e2e;
 		color: #fff;
 	}
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #444;
+		border-color: #2e2e2e;
 	}
 
 	::-webkit-input-placeholder {
@@ -2333,7 +2348,7 @@ input, select, textarea {
 .icon-foreground path,
 .icon-foreground circle {
   stroke: #2e2e2e; /* Black for the icon */
-  stroke-width: 6px; /* Icon stroke width */
+  stroke-width: 1px; /* Icon stroke width */
   fill: none;
 }
 
@@ -2486,6 +2501,107 @@ input, select, textarea {
 	ul.alt li {
 		border-top-color: #e6e6e6;
 	}
+/*
+ * Animation for the "What We Do" Feature Items
+ * --------------------------------------------
+*/
+
+/* 1. Define the initial state of the items before they animate.
+      They will start off invisible and moved down by 30px.
+*/
+#what-we-do .feature-item,
+.who-we-help .feature-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* 2. Define the @keyframes for the animation.
+      We can reuse the same "fadeInUp" animation from before.
+*/
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Apply the animation to ALL feature items.
+      We tell it to run the "fadeInUp" animation over 0.7 seconds
+      and to keep its final state ('forwards').
+*/
+#what-we-do .feature-item {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* 4. This is the magic part: Add staggered delays.
+      We use the ':nth-child()' selector to target the 1st, 2nd, and 3rd
+      <section class="content"> within the .features div.
+*/
+
+/* Target the first feature item */
+#what-we-do .features .content:nth-child(1) .feature-item {
+  animation-delay: 0.2s;
+}
+
+/* Target the second feature item */
+#what-we-do .features .content:nth-child(2) .feature-item {
+  animation-delay: 0.4s;
+}
+
+/* Target the third feature item */
+#what-we-do .features .content:nth-child(3) .feature-item {
+  animation-delay: 0.6s;
+}	
+
+/*
+ * CSS-Only Animation for the "Who We Help" Section
+ * --------------------------------------------------------
+*/
+
+/* 1. Define the initial state of the items before they animate.
+*/
+#who-we-help .feature-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* 2. If you don't already have it, define the @keyframes for the animation.
+      (If you already have @keyframes fadeInUp from before, you don't need to add it again).
+*/
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3. Apply the animation directly to the feature items.
+      This will run once when the page loads.
+*/
+#who-we-help .feature-item {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+/* 4. Add the staggered delays for the items inside the "who-we-help" section.
+*/
+
+/* Target the first feature item */
+#who-we-help .features .content:nth-child(1) .feature-item {
+  animation-delay: 0.2s;
+}
+
+/* Target the second feature item */
+#who-we-help .features .content:nth-child(2) .feature-item {
+  animation-delay: 0.4s;
+}
+
+/* Target the third feature item */
+#who-we-help .features .content:nth-child(3) .feature-item {
+  animation-delay: 0.6s;
+}
+
+
+
 
 /* Actions */
 
@@ -2757,16 +2873,16 @@ input, select, textarea {
 		}
 
 	ul.pagination li > .page.active {
-		background-color: #444;
+		background-color: #2e2e2e;
 		color: #fff !important;
 	}
 
 		ul.pagination li > .page.active:hover {
-			background-color: #515151;
+			background-color: #2e2e2e;
 		}
 
 		ul.pagination li > .page.active:active {
-			background-color: #373737;
+			background-color: #2e2e2e;
 		}
 
 /* Post */
@@ -3041,7 +3157,7 @@ input, select, textarea {
 		}
 
 	table th {
-		color: #444;
+		color: #2e2e2e;
 	}
 
 	table thead {
@@ -3191,7 +3307,7 @@ input, select, textarea {
 				.wrapper.style1 .button.primary {
 					box-shadow: none;
 					background-color: #fff;
-					color: #444 !important;
+					color: #212121 !important;
 				}
 
 			.wrapper.style1 .features > section:before {
@@ -3234,7 +3350,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #fff;
-					background: #444;
+					background: #2e2e2e;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -3256,7 +3372,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background-color: #fff;
 				border-color: #fff;
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style1 input[type="checkbox"]:focus + label:before,
@@ -3265,23 +3381,23 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
-				color: #888 !important;
+				color: #b7b7b7 !important;
 			}
 
 			.wrapper.style1 :-moz-placeholder {
-				color: #888 !important;
+				color: #b7b7b7 !important;
 			}
 
 			.wrapper.style1 ::-moz-placeholder {
-				color: #888 !important;
+				color: #b7b7b7 !important;
 			}
 
 			.wrapper.style1 :-ms-input-placeholder {
-				color: #888 !important;
+				color: #b7b7b7 !important;
 			}
 
 			.wrapper.style1 .formerize-placeholder {
-				color: #888 !important;
+				color: #b7b7b7 !important;
 			}
 
 			.wrapper.style1 .icon-wrapper {
@@ -3298,7 +3414,7 @@ input, select, textarea {
 				}
 
 				.wrapper.style1 .icon-wrapper .icon {
-					color: #444;
+					color: #2e2e2e;
 				}
 
 			.wrapper.style1 ul.alt li {
@@ -3310,7 +3426,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 ul.pagination li > .page.active {
-				background-color: #444;
+				background-color: #2e2e2e;
 				color: #fff !important;
 			}
 
@@ -3319,7 +3435,7 @@ input, select, textarea {
 				}
 
 				.wrapper.style1 ul.pagination li > .page.active:active {
-					background-color: #373737;
+					background-color: #2e2e2e;
 				}
 
 			.wrapper.style1 .post .content {
@@ -3361,24 +3477,24 @@ input, select, textarea {
 
 		.wrapper.style2 {
 			background-color: #f6f6f6;
-			color: #444;
+			color: #2e2e2e;
 			border-top: 0;
 		}
 
 			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style2 a {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style2 strong, .wrapper.style2 b {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style2 blockquote {
@@ -3404,8 +3520,8 @@ input, select, textarea {
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
 				background-color: transparent;
-				color: #444 !important;
-				box-shadow: inset 0 0 0 1px #444;
+				color: #2e2e2e !important;
+				box-shadow: inset 0 0 0 1px #2e2e2e;
 			}
 
 				.wrapper.style2 input[type="submit"]:hover,
@@ -3430,7 +3546,7 @@ input, select, textarea {
 				.wrapper.style2 button.primary,
 				.wrapper.style2 .button.primary {
 					box-shadow: none;
-					background-color: #444;
+					background-color: #2e2e2e;
 					color: #fff !important;
 				}
 
@@ -3455,7 +3571,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style2 label {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style2 input[type="text"],
@@ -3481,7 +3597,7 @@ input, select, textarea {
 				.wrapper.style2 input[type="url"]:focus,
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
-					border-color: #444;
+					border-color: #2e2e2e;
 				}
 
 			.wrapper.style2 select {
@@ -3489,13 +3605,13 @@ input, select, textarea {
 			}
 
 				.wrapper.style2 select option {
-					color: #444;
+					color: #2e2e2e;
 					background: #f6f6f6;
 				}
 
 			.wrapper.style2 input[type="checkbox"] + label,
 			.wrapper.style2 input[type="radio"] + label {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 				.wrapper.style2 input[type="checkbox"] + label:before,
@@ -3510,14 +3626,14 @@ input, select, textarea {
 
 			.wrapper.style2 input[type="checkbox"]:checked + label:before,
 			.wrapper.style2 input[type="radio"]:checked + label:before {
-				background-color: #444;
-				border-color: #444;
+				background-color: #2e2e2e;
+				border-color: #2e2e2e;
 				color: #fff;
 			}
 
 			.wrapper.style2 input[type="checkbox"]:focus + label:before,
 			.wrapper.style2 input[type="radio"]:focus + label:before {
-				border-color: #444;
+				border-color: #2e2e2e;
 			}
 
 			.wrapper.style2 ::-webkit-input-placeholder {
@@ -3562,7 +3678,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style2 ul.pagination li > .page.active {
-				background-color: #444;
+				background-color: #2e2e2e;
 				color: #fff !important;
 			}
 
@@ -3588,7 +3704,7 @@ input, select, textarea {
 				}
 
 			.wrapper.style2 table th {
-				color: #444;
+				color: #2e2e2e;
 			}
 
 			.wrapper.style2 table thead {
@@ -3820,13 +3936,13 @@ input, select, textarea {
 	}
 
 	#header {
-		background-color: #fff;
-		box-shadow: 0 0 0.125em 0 rgba(0, 0, 0, 0.35);
-		font-family: "Raleway", Helvetica, sans-serif;
-		font-weight: 500;
-		height: 3.5em;
+		background-color: #ffffff;
+	 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+		font-family: "Lato", Helvetica, sans-serif;
+		font-weight: 550;
+		height: 4.5em;
 		left: 0;
-		line-height: 3.5em;
+		line-height: 4.5em;
 		position: fixed;
 		text-transform: uppercase;
 		top: 0;
@@ -3848,9 +3964,21 @@ input, select, textarea {
 			}
 
 			#header h1 a {
-				color: inherit;
+				color: #2e2e2e;
 			}
 
+/* This targets the logo link AND any links inside a <nav> in the header */
+#header h1 a:hover,
+#header nav a:hover {
+    color: #ff6f00;
+    transition: color 0.2s ease-in-out;
+}
+
+/* It's also best practice to define the default link color explicitly */
+#header nav a {
+    color: #2e2e2e; /* Default link color */
+    text-decoration: none; /* Removes underline from nav links */
+}
 				#header h1 a span {
 					font-weight: 500;
 				}
@@ -3953,7 +4081,7 @@ input, select, textarea {
 		}
 
 		#header.alt {
-			background-color: #444;
+			background-color: #2e2e2e;
 			color: #fff;
 			-moz-animation: none;
 			-webkit-animation: none;
@@ -3999,7 +4127,7 @@ input, select, textarea {
 				#header.alt .button.primary {
 					box-shadow: none;
 					background-color: #fff;
-					color: #444 !important;
+					color: #2e2e2e !important;
 				}
 
 			#header.alt input, #header.alt select, #header.alt textarea {
@@ -4092,7 +4220,7 @@ input, select, textarea {
 		list-style: none;
 		padding: 0;
 		background: #fff;
-		color: #444;
+		color: #2e2e2e;
 		min-width: 13em;
 		padding: 0.75em;
 		margin-top: -0.5em;
@@ -4139,7 +4267,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background-color: #444;
+		background-color: #2e2e2e;
 		color: #fff;
 		min-height: 40em;
 		height: 75vh;
@@ -4471,7 +4599,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background-color: #fff;
+		background-color: #ffffff;
 		box-shadow: none;
 		display: none;
 		height: 100%;
@@ -4543,7 +4671,7 @@ input, select, textarea {
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			border: 0;
-			color: #444;
+			color: #2e2e2e;
 			cursor: pointer;
 			display: block;
 			height: 4em;
@@ -4622,7 +4750,11 @@ input, select, textarea {
 				}
 
 		}
+
+
+
 		/* Video background */
+
 #banner {
   position: relative;
   overflow: hidden;
@@ -4650,7 +4782,7 @@ input, select, textarea {
   z-index: 2;
   max-width: 600px;
   padding: 2rem;
-  color: #fff;
+  color: #ffffff;
   text-align: left;
 }
 
@@ -4662,19 +4794,91 @@ input, select, textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to right, rgba(21, 21, 21, 0.6) 40%, rgba(46, 46, 46, 0) 100%);
   z-index: 1;
 }
 
-/* Buttons at bottom left */
-#banner .actions {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
+/* --- Contact Info Section Styles --- */
+
+/* Main container for the right-side column */
+.contact-info {
+    font-family: sans-serif; /* Use your site's font */
 }
 
-#banner .button.primary {
-  background: #ffa968; /* adjust brand color */
-  color: #fff;
+.contact-info h2 {
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    color: #2e2e2e;
 }
 
+/* Optional separator line */
+.contact-info .separator {
+    border: 0;
+    border-top: 2px solid #2e2e2e;
+    width: 2em;
+    margin: 0 0 2em 0; /* Pushes the list down */
+}
+
+
+/* Styling for the list itself */
+.contact-list {
+    list-style: none; /* Removes the default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* This is the key for the side-by-side layout */
+.contact-list li {
+    display: flex; /* Aligns icon and text side-by-side */
+    align-items: center; /* Vertically centers the icon with the text */
+    margin-bottom: 1.5em; /* Space between each contact item */
+}
+
+/* Styling for the icon's circular background */
+.contact-list .icon-wrapper {
+    flex-shrink: 0; /* Prevents the icon from shrinking on small screens */
+    width: 45px;
+    height: 45px;
+    background-color: #ff6f00; /* A light gray background */
+    border-radius: 50%; /* Makes it a perfect circle */
+    margin-right: 15px; /* Space between icon and text */
+
+    /* These three lines perfectly center the icon inside the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the icon itself (from Font Awesome) */
+.contact-list .icon-wrapper i {
+    font-size: 20px;
+    color: #ffffff; /* Your brand's orange color */
+}
+
+
+/* Styling for the text block next to the icon */
+.contact-details {
+    display: flex;
+    flex-direction: column; /* Stacks the label and the link vertically */
+}
+
+/* Styling the "Email", "WhatsApp" label */
+.contact-details .contact-label {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #2e2e2e;
+    margin-bottom: 0.2em; /* Small space between label and link */
+}
+
+/* Styling the clickable link */
+.contact-details a {
+    color: #2e2e2e;
+    text-decoration: none; /* Removes the default underline */
+    font-size: 0.9em;
+    transition: color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.contact-details a:hover {
+    color: #ff6f00; /* Link turns orange on hover */
+    text-decoration: underline; /* Adds underline on hover for clarity */
+}
